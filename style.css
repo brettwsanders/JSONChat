@@ -1,5 +1,5 @@
 html, body, header, section,
-div, span, input {
+div, textarea, span, input {
     margin: 0;
     padding: 0;
     border: 0;
@@ -35,8 +35,8 @@ main {
 }
 
 section {
-    padding: 16px;
     flex: 1;
+    padding: 16px;
 }
 
 input {
@@ -53,21 +53,36 @@ input {
     border-right: 1px solid #ccc;
 }
 
-input[name="message"] {
+textarea {
     width: 100%;
     border: 1px solid #ccc;
-    height: 24px;
+    height: 32px;
+    padding: 8px;
+    box-sizing: border-box;
 }
 
-input[type="button"] {
-    width: 50px;
+textarea:focus {
+    height: 64px;
+}
+
+textarea.dirty {
+    height: 64px;
+}
+
+input[type="submit"] {
+    height: 32px;
+    width: 100px;
     float: right;
     background-color: #bbb;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
-input[type="button"]:hover {
+input[type="submit"]:hover {
     background-color: #777;
     color: white;
+}
+
+input[type="submit"]:focus {
+    outline: 0;
 }

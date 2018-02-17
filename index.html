@@ -11,8 +11,15 @@
     </header>
     <main>
         <section class="chat-container">
-            <input type="text" name="message" placeholder="Your message...">
-            <input type="button" value="Send">
+            <form class="chat-form">
+                <textarea 
+                    name="message"
+                    wrap="hard"
+                    placeholder="Your message..."
+                    autofocus
+                ></textarea>
+                <input type="submit" value="Send">
+            </form>
         </section>
         <section class="json-container">
         </section>

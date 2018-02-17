@@ -1,9 +1,35 @@
-const $ = el => document.querySelectorAll(el);
-const button = $('.chat-container input[type="button"]')[0];
-
+const $ = el => document.querySelector(el);
 let message = '';
 
-button.addEventListener('click', event => {
-    message = $('.chat-container input[type="text"]')[0].value;
-    console.log(message);
+const addRemoveClass = (el, condition, className) => {
+   if (condition) {
+       el.classList.add(className);
+   } else {
+       el.classList.remove(className);
+   }
+};
+
+const updateTextArea = () => {
+    const textarea = $('textarea');
+    addRemoveClass(textarea, textarea.value !== '', 'dirty');
+};
+
+const isValidInput = message => {
+    return message.length > 0;
+};
+
+$('.chat-form').addEventListener('submit', event => {
+    event.preventDefault();
+    const textarea = $('textarea');
+    const message = textarea.value;
+    if (!isValidInput(message)) {
+        // show invalid input message
+        return;
+    }
+    $('.json-container').innerHTML = message;
+
+    textarea.value = '';
+    updateTextArea();
 });
+
+$('textarea').addEventListener('change', updateTextArea);
