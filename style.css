@@ -1,0 +1,73 @@
+html, body, header, section,
+div, span, input {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    font-size: 16px;
+}
+
+header {
+    display: flex;
+    height: 48px;
+    background-color: #205081;
+    border-bottom: 1px solid #2e3d54;
+    align-items: center;
+}
+
+header .logo {
+    padding: 8px;
+    font-size: 24px;
+    color: white;
+}
+
+main {
+    display: flex;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+section {
+    padding: 16px;
+    flex: 1;
+}
+
+input {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.chat-container {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.json-container {
+    border-right: 1px solid #ccc;
+}
+
+input[name="message"] {
+    width: 100%;
+    border: 1px solid #ccc;
+    height: 24px;
+}
+
+input[type="button"] {
+    width: 50px;
+    float: right;
+    background-color: #bbb;
+    text-align: center;
+    border-radius: 20px;
+}
+
+input[type="button"]:hover {
+    background-color: #777;
+    color: white;
+}
